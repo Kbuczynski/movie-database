@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Requirement task for Intive Patronage 2021"
+    />
+    <title>Movies Database | Add</title>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+
+    <script type="module" src="js/add.js"></script>
+  </head>
+  <body>
+    <div class="moviesCounterContainer" id="moviesCountersContainer">
+      <p class="moviesCounterCol">
+        All: <span class="moviesCounter" id="moviesCounterAll"></span>
+      </p>
+      <p class="moviesCounterCol">
+        Viewed: <span class="moviesCounter" id="moviesCounterSeen"></span>
+      </p>
+    </div>
+    <div id="formContainer" class="formContainer">
+      <form class="formAdd">
+        <div class="formAdd__box">
+          <label for="title" class="box__label">Enter title:</label>
+          <input
+            type="text"
+            class="box__input"
+            id="title"
+            placeholder="title"
+            required
+          />
+        </div>
+        <div class="formAdd__box">
+          <label for="year" class="box__label">Enter year of the movie:</label>
+          <input
+            type="number"
+            min="1895"
+            class="box__input"
+            id="year"
+            placeholder="year"
+            required
+          />
+        </div>
+        <div class="formAdd__box">
+          <label for="genre" class="box__label"
+            >Enter genre of the movie:</label
+          >
+          <input
+            type="text"
+            class="box__input"
+            id="genre"
+            placeholder="genre"
+            required
+          />
+        </div>
+        <div class="formAdd__box">
+          <label for="description" class="box__label"
+            >Enter movie description:</label
+          >
+          <textarea
+            class="box__input"
+            id="description"
+            placeholder="description"
+          ></textarea>
+        </div>
+        <div class="formAdd__box">
+          <button class="box__btn">Add movie</button>
+          <a href="index.html" class="box__btn">Back to home</a>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Requirement task for Intive Patronage 2021"
+    />
+    <title>Movies Database | Home</title>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+
+    <script type="module" src="./js/index.js"></script>
+  </head>
+  <body>
+    <div class="moviesCounterContainer" id="moviesCountersContainer">
+      <p class="moviesCounterCol">
+        All: <span class="moviesCounter" id="moviesCounterAll"></span>
+      </p>
+      <p class="moviesCounterCol">
+        Viewed: <span class="moviesCounter" id="moviesCounterSeen"></span>
+      </p>
+      <div class="moviesCounterCol">
+        <a href="add.html" class="box__btn">Add new movie</a>
+      </div>
+    </div>
+    <div class="moviesListContainer" id="moviesListContainer">
+      <ul class="moviesList" id="moviesList">
+        <!-- generated movie list items -->
+      </ul>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,213 @@
+:root {
+  --gray: rgba(255, 255, 255, 0.219);
+  --black: #000;
+  --white: #fff;
+}
+
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  background-image: linear-gradient(
+    45deg,
+    #dabcf9 0%,
+    #c8c5f7 50%,
+    #e4eaec 100%
+  );
+}
+
+.moviesCounterContainer {
+  font-size: 2rem;
+  padding: 1rem 1rem 0 1rem;
+}
+
+.moviesCounterCol {
+  text-align: right;
+  padding: 1rem 0;
+}
+
+.moviesCounter {
+  font-weight: bold;
+}
+
+.moviesListContainer {
+  margin-top: 100px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.moviesList {
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.moviesListItem {
+  position: relative;
+  font-size: 1.5rem;
+  margin: 0.5rem;
+  width: calc(50% - 1rem);
+  padding: 0 1rem;
+  border-radius: 20px;
+}
+
+@media (max-width: 900px) {
+  .moviesList {
+    flex-wrap: nowrap;
+    flex-direction: column;
+  }
+
+  .moviesListItem {
+    width: 100%;
+    margin: 0.5rem 0;
+  }
+}
+
+.moviesListItem::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--white);
+  z-index: -1;
+  border-radius: 20px;
+  filter: blur(0.1rem) opacity(20%);
+  transition: filter 0.2s ease-in-out;
+}
+
+.moviesListItem:hover::before {
+  filter: blur(0.1rem) opacity(40%);
+}
+
+.movieInfo {
+  margin: 1rem 0;
+  display: flex;
+}
+
+.movieInfoLabel {
+  margin-right: 0.5rem;
+  font-weight: bold;
+}
+
+.movieInfoLabel::first-letter,
+.movieInfoContent::first-letter {
+  text-transform: uppercase;
+}
+
+.movieSeenBtn {
+  position: absolute;
+  top: 0;
+  right: 1rem;
+  border: none;
+  background-color: transparent;
+  font-size: 2.5rem;
+  cursor: pointer;
+}
+
+.movieSeenBtn:focus {
+  outline: none;
+  border-bottom: 0.1rem solid var(--black);
+}
+
+@keyframes shake {
+  0% {
+    transform: rotate(-10deg);
+  }
+  50% {
+    transform: rotate(10deg);
+  }
+  100% {
+    transform: rotate(0);
+  }
+}
+
+.movieSeenBtn:hover {
+  animation: shake 0.5s ease;
+}
+
+.movieSeenBtn--true::before {
+  content: "✔";
+}
+
+.movieSeenBtn--false::before {
+  content: "✘";
+}
+
+.formContainer {
+  width: 100vw;
+  margin-top: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.formAdd {
+  width: 50vw;
+  position: relative;
+  padding: 2rem;
+}
+
+@media (max-width: 600px) {
+  .formAdd {
+    width: 100vw;
+  }
+}
+
+.formAdd::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--white);
+  z-index: -1;
+  border-radius: 20px;
+  filter: blur(0.1rem) opacity(20%);
+}
+
+.formAdd__box {
+  display: flex;
+  flex-direction: column;
+}
+
+.formAdd__box * {
+  margin: 0.5rem 0;
+}
+
+.box__label {
+  font-weight: bold;
+}
+
+.box__input {
+  border: none;
+  background: transparent;
+  border-bottom: 0.1rem solid var(--black);
+  padding: 1rem 0;
+  font-size: 1.2rem;
+}
+
+.box__btn {
+  padding: 1rem;
+  position: relative;
+  background: transparent;
+  border: 0.1rem solid var(--black);
+  font-weight: bold;
+  font-size: 1.2rem;
+  cursor: pointer;
+  width: 50%;
+  text-align: center;
+  text-decoration: none;
+  color: var(--black);
+}
